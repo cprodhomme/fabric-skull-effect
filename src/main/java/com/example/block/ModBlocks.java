@@ -11,7 +11,7 @@ import net.minecraft.util.Identifier;
 
 public class ModBlocks {
   public static final Block MISCHIEVOUS_SKULL_BLOCK = registerBlock(
-    "mischievous_skull_block", 
+    MischievousSkullBlock.IDENTIFIER,
     MischievousSkullBlock.MISCHIEVOUS_SKULL_BLOCK
   );
 

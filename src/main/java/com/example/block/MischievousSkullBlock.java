@@ -25,6 +25,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class MischievousSkullBlock extends WitherSkullBlock {
+  public static final String IDENTIFIER = "mischievous_skull_block";
   public static final MischievousSkullBlock MISCHIEVOUS_SKULL_BLOCK = new MischievousSkullBlock(
     Block.Settings.copy(Blocks.WITHER_SKELETON_SKULL)
                   .strength(5.0f)
