@@ -21,7 +21,6 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-// public class MischievousSkullBlock extends WitherSkullBlock {
 public class MischievousSkullBlock extends WitherSkullBlock {
 
   public MischievousSkullBlock(Settings settings) {
