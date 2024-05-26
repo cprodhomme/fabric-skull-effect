@@ -3,14 +3,18 @@ package com.example.block;
 
 import java.util.Random;
 
+import org.jetbrains.annotations.Nullable;
+
 import com.example.ExampleMod;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.WitherSkullBlock;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -26,13 +30,12 @@ public class MischievousSkullBlock extends WitherSkullBlock {
 
   // Méthode appelée lorsqu'un bloc est cassé
   @Override
-  public BlockState onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+  public void afterBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack tool) {
     ExampleMod.LOGGER.debug("break MischievousSkullBlock");
     world.playSound(player, pos, SoundEvents.ENTITY_WITHER_DEATH, SoundCategory.BLOCKS, 0.5f, 0.5f);
 
     // Appliquer un effet aléatoire au joueur
     applyRandomEffect(player);
-    return state;
   }
 
   // Méthode pour appliquer un effet aléatoire au joueur
