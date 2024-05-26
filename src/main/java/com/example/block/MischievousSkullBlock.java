@@ -39,9 +39,7 @@ public class MischievousSkullBlock extends WitherSkullBlock {
 
   // Méthode pour appliquer un effet aléatoire au joueur
   private void applyRandomEffect(PlayerEntity player) {
-    Random random = new Random();
-
-    int randomEffectIndex = random.nextInt(5) + 1;
+    int randomEffectIndex = getRandomIntegerEffect();
 
     // Créer une nouvelle instance d'effet aléatoire
     RegistryEntry<StatusEffect> randomEffect = getRandomEffect(randomEffectIndex);
@@ -51,6 +49,12 @@ public class MischievousSkullBlock extends WitherSkullBlock {
 
     StatusEffectInstance statusEffectInstance = new StatusEffectInstance(randomEffect, Integer.MAX_VALUE, amplifier);
     player.addStatusEffect(statusEffectInstance);
+  }
+
+  private Integer getRandomIntegerEffect() {
+    Random random = new Random();
+
+    return random.nextInt(5) + 1;
   }
 
   // assigne effet niveau 1 (amplifier 0) par défaut
