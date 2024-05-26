@@ -63,7 +63,7 @@ public class MischievousSkullBlock extends WitherSkullBlock {
   private Integer getRandomIntegerEffect() {
     Random random = new Random();
 
-    return random.nextInt(5) + 1;
+    return random.nextInt(9) + 1;
   }
 
   // assigne effet niveau 1 (amplifier 0) par défaut
@@ -90,6 +90,14 @@ public class MischievousSkullBlock extends WitherSkullBlock {
         return StatusEffects.SPEED;
       case 5:
         return StatusEffects.NIGHT_VISION;
+      case 6:
+        return StatusEffects.SATURATION;
+      case 7:
+        return StatusEffects.CONDUIT_POWER;
+      case 8:
+        return StatusEffects.OOZING;
+      case 9:
+        return StatusEffects.FIRE_RESISTANCE;
       default:
         return StatusEffects.STRENGTH;
     }
