@@ -7,7 +7,9 @@ import org.jetbrains.annotations.Nullable;
 
 import com.example.ExampleMod;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.WitherSkullBlock;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.effect.StatusEffect;
@@ -16,12 +18,18 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class MischievousSkullBlock extends WitherSkullBlock {
+  public static final MischievousSkullBlock MISCHIEVOUS_SKULL_BLOCK = new MischievousSkullBlock(
+    Block.Settings.copy(Blocks.WITHER_SKELETON_SKULL)
+                  .strength(5.0f)
+                  .sounds(BlockSoundGroup.AMETHYST_BLOCK)
+  );
 
   public MischievousSkullBlock(Settings settings) {
     super(settings);

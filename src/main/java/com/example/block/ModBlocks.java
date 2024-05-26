@@ -3,18 +3,16 @@ package com.example.block;
 import com.example.ExampleMod;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
 public class ModBlocks {
   public static final Block MISCHIEVOUS_SKULL_BLOCK = registerBlock(
     "mischievous_skull_block", 
-    new MischievousSkullBlock(Block.Settings.copy(Blocks.WITHER_SKELETON_SKULL).strength(5.0f).sounds(BlockSoundGroup.AMETHYST_BLOCK))
+    MischievousSkullBlock.MISCHIEVOUS_SKULL_BLOCK
   );
 
   private static Block registerBlock(String name, Block block) {
