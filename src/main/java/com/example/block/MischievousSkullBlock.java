@@ -40,10 +40,13 @@ public class MischievousSkullBlock extends WitherSkullBlock {
   @Override
   public void afterBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack tool) {
     ExampleMod.LOGGER.debug("break MischievousSkullBlock");
-    world.playSound(player, pos, SoundEvents.ENTITY_WITHER_DEATH, SoundCategory.BLOCKS, 0.5f, 0.5f);
 
-    // Appliquer un effet aléatoire au joueur
-    applyRandomEffect(player);
+    if (player.isCreative() == false) {
+      world.playSound(player, pos, SoundEvents.ENTITY_WITHER_DEATH, SoundCategory.BLOCKS, 0.5f, 0.5f);
+  
+      // Appliquer un effet aléatoire au joueur
+      applyRandomEffect(player);
+    }
   }
 
   // Méthode pour appliquer un effet aléatoire au joueur
